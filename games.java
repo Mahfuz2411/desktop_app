@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.util.*;
 
 public class games extends JFrame implements ActionListener {
-    Button tik_tak_toe_button;
+    JButton tik_tak_toe_button;
+    JButton coming_soon;
     games() {
         setTitle("Tik Tak Toe");
         setSize(500, 530);
@@ -12,19 +13,30 @@ public class games extends JFrame implements ActionListener {
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        tik_tak_toe_button = new Button("Tik Tak Toe");
-        tik_tak_toe_button.setBounds(50, 80, 98, 98);
+        tik_tak_toe_button = new JButton("<html>Tik Tak<br>Toe<html>");
+        tik_tak_toe_button.setBounds(50, 80, 95, 95);
         tik_tak_toe_button.setActionCommand("TikTakToeButton");
         tik_tak_toe_button.addActionListener(this);
         add(tik_tak_toe_button);
+
+        coming_soon = new JButton("<html>Comming<br>   Soon<html>");
+        coming_soon.setBounds(150, 80, 95, 95);
+        coming_soon.setActionCommand("CommingSoon");
+        coming_soon.addActionListener(this);
+        add(coming_soon);
 
         setVisible(true);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        dispose();
-        Tik_Tak_Toe_hard_version ob = new Tik_Tak_Toe_hard_version();
+        if(e.getActionCommand()=="TikTakToeButton") {
+            dispose();
+            Tik_Tak_Toe_hard_version ob = new Tik_Tak_Toe_hard_version();
+        }else {
+            JOptionPane.showMessageDialog(null,"I am trying my best");
+        }
+        
     }
 
     public static void main(String[] args) {
