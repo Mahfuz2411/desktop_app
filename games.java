@@ -198,6 +198,9 @@ class Tik_Tak_Toe_hard_version extends JFrame implements ActionListener{
             temp_checker = cross_check_no_two();
         }
         if(temp_checker==false) {
+            temp_checker = cross_check_no_three();
+        }
+        if(temp_checker==false) {
             int f[] = {2, 4, 6, 8};
             
             int a = random.nextInt(4);
@@ -208,6 +211,30 @@ class Tik_Tak_Toe_hard_version extends JFrame implements ActionListener{
             btn[f[a]].setBackground(Color.RED);
         }
         
+    }
+    boolean cross_check_no_three() {
+        int f[] = {1, 3, 7, 9};
+        
+        boolean isOrNot = false;
+        if(arr[1]==1 && arr[5]==1) {
+            isOrNot = true;
+        }else if(arr[3]==1 && arr[5]==1){
+            isOrNot = true;
+        }else if(arr[7]==1 && arr[5]==1){
+            isOrNot = true;
+        }else if(arr[9]==1 && arr[5]==1){
+            isOrNot = true;
+        }
+        if(isOrNot) {
+            int a = random.nextInt(4);
+            while(arr[f[a]]!=0) {
+                a=random.nextInt(4);
+            }
+            arr[f[a]]=2;
+            btn[f[a]].setBackground(Color.RED);
+            return true;
+        }
+        return false;
     }
 
     boolean cross_check_no_two() {
