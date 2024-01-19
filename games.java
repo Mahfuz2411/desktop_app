@@ -270,7 +270,7 @@ class Tik_Tak_Toe_hard_version extends JFrame implements ActionListener{
         else if(((arr[4]==arr[5]) && arr[4]==n && arr[6]==0) || ((arr[5]==arr[6]) && arr[5]==n && arr[4]==0) || ((arr[4]==arr[6]) && arr[4]==n && arr[5]==0)) {
             f.add(4);f.add(5);f.add(6);
         }
-        else if(((arr[7]==arr[8]) && arr[7]==n && arr[9]==0) || ((arr[8]==arr[9]) && arr[8]==n && arr[8]==0) || ((arr[7]==arr[9]) && arr[7]==n && arr[8]==0)) {
+        else if(((arr[7]==arr[8]) && arr[7]==n && arr[9]==0) || ((arr[8]==arr[9]) && arr[8]==n && arr[7]==0) || ((arr[7]==arr[9]) && arr[7]==n && arr[8]==0)) {
             f.add(7);f.add(8);f.add(9);
         }
 
